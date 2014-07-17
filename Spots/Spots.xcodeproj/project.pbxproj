@@ -21,6 +21,7 @@
 		133356071977E3780096451A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133355E91977E3780096451A /* UIKit.framework */; };
 		1333560F1977E3780096451A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1333560D1977E3780096451A /* InfoPlist.strings */; };
 		133356111977E3780096451A /* SpotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 133356101977E3780096451A /* SpotsTests.m */; };
+		82CCDC141977E51200EC8279 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCDC131977E51200EC8279 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		1333560C1977E3780096451A /* SpotsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpotsTests-Info.plist"; sourceTree = "<group>"; };
 		1333560E1977E3780096451A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		133356101977E3780096451A /* SpotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotsTests.m; sourceTree = "<group>"; };
+		82CCDC121977E51200EC8279 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		82CCDC131977E51200EC8279 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				133355F41977E3780096451A /* AppDelegate.h */,
 				133355F51977E3780096451A /* AppDelegate.m */,
 				133355F71977E3780096451A /* Main.storyboard */,
+				82CCDC121977E51200EC8279 /* RegisterViewController.h */,
+				82CCDC131977E51200EC8279 /* RegisterViewController.m */,
 				133355FA1977E3780096451A /* ViewController.h */,
 				133355FB1977E3780096451A /* ViewController.m */,
 				133355FD1977E3780096451A /* Images.xcassets */,
@@ -252,6 +257,7 @@
 				133355FC1977E3780096451A /* ViewController.m in Sources */,
 				133355F61977E3780096451A /* AppDelegate.m in Sources */,
 				133355F21977E3780096451A /* main.m in Sources */,
+				82CCDC141977E51200EC8279 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +462,7 @@
 				133356161977E3780096451A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		133356171977E3780096451A /* Build configuration list for PBXNativeTarget "SpotsTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +471,7 @@
 				133356191977E3780096451A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
