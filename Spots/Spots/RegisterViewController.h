@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
 #define ALPHA                   @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 #define NUMERIC                 @"1234567890"
 #define ALPHA_NUMERIC           ALPHA NUMERIC
@@ -25,6 +26,9 @@
 
 - (IBAction)chkAvailability:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *buttonChange;
+=======
+>>>>>>> FETCH_HEAD
 
+@interface RegisterViewController : UIViewController
 
 @end

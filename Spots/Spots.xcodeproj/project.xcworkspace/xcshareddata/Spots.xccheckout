@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E29A2EBF-D30C-4B69-8054-44B2FBB2D33D</string>
+	<string>F835E939-781A-477C-A1FE-5FB6035A6BCF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Spots</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F1AC64B4-F568-4F66-AA5D-8363DCCA8CC5</key>
+		<key>1A236489-CF7D-44EA-A804-DA1EB09E1979</key>
 		<string>https://github.com/TwilightSample/Spots.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Spots/Spots.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F1AC64B4-F568-4F66-AA5D-8363DCCA8CC5</key>
+		<key>1A236489-CF7D-44EA-A804-DA1EB09E1979</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F1AC64B4-F568-4F66-AA5D-8363DCCA8CC5</string>
+	<string>1A236489-CF7D-44EA-A804-DA1EB09E1979</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F1AC64B4-F568-4F66-AA5D-8363DCCA8CC5</string>
+			<string>1A236489-CF7D-44EA-A804-DA1EB09E1979</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Spots</string>
 		</dict>

@@ -7,17 +7,20 @@
 //
 
 #import "RegisterViewController.h"
+<<<<<<< HEAD
 #import <Parse/Parse.h>
 #import "kCommon.h"
 #import "Base64.h"
 #import "UIColor+CreateMethods.h"
+=======
+
+>>>>>>> FETCH_HEAD
 @interface RegisterViewController ()
-{
-    BOOL isToRegiser;
-}
+
 @end
 
 @implementation RegisterViewController
+<<<<<<< HEAD
 @synthesize userImg,usernameTxtField,emailidTxtField,passwordTxtField,confirmpwdTextField,phonenumTxtField,keyboardToolbar,scroller,imagePicker,chosenImage,buttonChange;
 
 CGPoint svos;
@@ -27,6 +30,8 @@ UIBarButtonItem *previousButton;
 UIBarButtonItem *nextButton;
 UIBarButtonItem *extraSpace;
 UIBarButtonItem *done;
+=======
+>>>>>>> FETCH_HEAD
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +46,7 @@ UIBarButtonItem *done;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+<<<<<<< HEAD
     UIColor *textBg = [UIColor colorWithHex:@"#d6eea5" alpha:1.0];
     UIColor *buttonBg = [UIColor colorWithHex:@"#7a9b38" alpha:1.0];
 
@@ -201,6 +207,10 @@ UIBarButtonItem *done;
     [exit resignFirstResponder];
     return YES;
 }
+=======
+}
+
+>>>>>>> FETCH_HEAD
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -218,6 +228,7 @@ UIBarButtonItem *done;
 }
 */
 
+<<<<<<< HEAD
 - (IBAction)chkAvailability:(id)sender {
     NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
@@ -307,4 +318,6 @@ UIBarButtonItem *done;
         }
     }];
 }
+=======
+>>>>>>> FETCH_HEAD
 @end
