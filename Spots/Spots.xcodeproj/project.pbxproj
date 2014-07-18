@@ -35,6 +35,13 @@
 		135305601978111200B309BC /* kCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1353055F1978111200B309BC /* kCommon.m */; };
 		135305651978123200B309BC /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 135305641978123200B309BC /* Base64.m */; };
 		135305691978160900B309BC /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 135305681978160900B309BC /* DejalActivityView.m */; };
+		13907696197901F0008931D1 /* DashBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13907695197901F0008931D1 /* DashBoardViewController.m */; };
+		139076A4197909D5008931D1 /* bg320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 139076A1197909D5008931D1 /* bg320x480.png */; };
+		139076A5197909D5008931D1 /* bg640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 139076A2197909D5008931D1 /* bg640x960.png */; };
+		139076A6197909D5008931D1 /* bg640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 139076A3197909D5008931D1 /* bg640x1136.png */; };
+		139076AA19790B12008931D1 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 139076A819790B12008931D1 /* avatar.png */; };
+		139076AB19790B12008931D1 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 139076A919790B12008931D1 /* avatar@2x.png */; };
+		139076AF19790D11008931D1 /* UIColor+CreateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 139076AE19790D11008931D1 /* UIColor+CreateMethods.m */; };
 		82CCDC141977E51200EC8279 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCDC131977E51200EC8279 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +92,15 @@
 		135305641978123200B309BC /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		135305671978160900B309BC /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
 		135305681978160900B309BC /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
+		13907694197901F0008931D1 /* DashBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardViewController.h; sourceTree = "<group>"; };
+		13907695197901F0008931D1 /* DashBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardViewController.m; sourceTree = "<group>"; };
+		139076A1197909D5008931D1 /* bg320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg320x480.png; sourceTree = "<group>"; };
+		139076A2197909D5008931D1 /* bg640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg640x960.png; sourceTree = "<group>"; };
+		139076A3197909D5008931D1 /* bg640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg640x1136.png; sourceTree = "<group>"; };
+		139076A819790B12008931D1 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		139076A919790B12008931D1 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		139076AD19790D11008931D1 /* UIColor+CreateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CreateMethods.h"; sourceTree = "<group>"; };
+		139076AE19790D11008931D1 /* UIColor+CreateMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CreateMethods.m"; sourceTree = "<group>"; };
 		82CCDC121977E51200EC8279 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Spots/RegisterViewController.h; sourceTree = "<group>"; };
 		82CCDC131977E51200EC8279 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Spots/RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +226,8 @@
 		1333561A1977ECD40096451A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				139076A719790B00008931D1 /* profileImg */,
+				139076A0197909BE008931D1 /* bgimages */,
 				1333561D1977ED950096451A /* profile_image.png */,
 			);
 			name = images;
@@ -223,6 +241,8 @@
 				82CCDC131977E51200EC8279 /* RegisterViewController.m */,
 				133355FA1977E3780096451A /* ViewController.h */,
 				133355FB1977E3780096451A /* ViewController.m */,
+				13907694197901F0008931D1 /* DashBoardViewController.h */,
+				13907695197901F0008931D1 /* DashBoardViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -238,6 +258,7 @@
 		1353055D197810F300B309BC /* modal */ = {
 			isa = PBXGroup;
 			children = (
+				139076AC19790D04008931D1 /* ColorCode */,
 				13530566197815F700B309BC /* Loading */,
 				135305621978119900B309BC /* Base64 */,
 				135305611978118600B309BC /* kCommon */,
@@ -270,6 +291,34 @@
 				135305681978160900B309BC /* DejalActivityView.m */,
 			);
 			name = Loading;
+			sourceTree = "<group>";
+		};
+		139076A0197909BE008931D1 /* bgimages */ = {
+			isa = PBXGroup;
+			children = (
+				139076A1197909D5008931D1 /* bg320x480.png */,
+				139076A2197909D5008931D1 /* bg640x960.png */,
+				139076A3197909D5008931D1 /* bg640x1136.png */,
+			);
+			name = bgimages;
+			sourceTree = "<group>";
+		};
+		139076A719790B00008931D1 /* profileImg */ = {
+			isa = PBXGroup;
+			children = (
+				139076A819790B12008931D1 /* avatar.png */,
+				139076A919790B12008931D1 /* avatar@2x.png */,
+			);
+			name = profileImg;
+			sourceTree = "<group>";
+		};
+		139076AC19790D04008931D1 /* ColorCode */ = {
+			isa = PBXGroup;
+			children = (
+				139076AD19790D11008931D1 /* UIColor+CreateMethods.h */,
+				139076AE19790D11008931D1 /* UIColor+CreateMethods.m */,
+			);
+			name = ColorCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,8 +398,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				133355FE1977E3780096451A /* Images.xcassets in Resources */,
+				139076A6197909D5008931D1 /* bg640x1136.png in Resources */,
+				139076A4197909D5008931D1 /* bg320x480.png in Resources */,
+				139076AB19790B12008931D1 /* avatar@2x.png in Resources */,
 				133355F01977E3780096451A /* InfoPlist.strings in Resources */,
+				139076AA19790B12008931D1 /* avatar.png in Resources */,
 				133355F91977E3780096451A /* Main.storyboard in Resources */,
+				139076A5197909D5008931D1 /* bg640x960.png in Resources */,
 				1333561E1977ED950096451A /* profile_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +426,9 @@
 			files = (
 				133355FC1977E3780096451A /* ViewController.m in Sources */,
 				133355F61977E3780096451A /* AppDelegate.m in Sources */,
+				139076AF19790D11008931D1 /* UIColor+CreateMethods.m in Sources */,
 				133355F21977E3780096451A /* main.m in Sources */,
+				13907696197901F0008931D1 /* DashBoardViewController.m in Sources */,
 				135305601978111200B309BC /* kCommon.m in Sources */,
 				135305651978123200B309BC /* Base64.m in Sources */,
 				82CCDC141977E51200EC8279 /* RegisterViewController.m in Sources */,

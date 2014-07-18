@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "kCommon.h"
 #import "Base64.h"
+#import "UIColor+CreateMethods.h"
 @interface RegisterViewController ()
 {
     BOOL isToRegiser;
@@ -17,7 +18,7 @@
 @end
 
 @implementation RegisterViewController
-@synthesize useridTxtField,userImg,usernameTxtField,emailidTxtField,passwordTxtField,confirmpwdTextField,phonenumTxtField,keyboardToolbar,scroller,imagePicker,chosenImage,buttonChange;
+@synthesize userImg,usernameTxtField,emailidTxtField,passwordTxtField,confirmpwdTextField,phonenumTxtField,keyboardToolbar,scroller,imagePicker,chosenImage,buttonChange;
 
 CGPoint svos;
 
@@ -40,12 +41,24 @@ UIBarButtonItem *done;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIColor *textBg = [UIColor colorWithHex:@"#d6eea5" alpha:1.0];
+    UIColor *buttonBg = [UIColor colorWithHex:@"#7a9b38" alpha:1.0];
+
+    buttonChange.backgroundColor = buttonBg;
+    usernameTxtField.backgroundColor = textBg;
+    emailidTxtField.backgroundColor = textBg;
+    phonenumTxtField.backgroundColor = textBg;
+    passwordTxtField.backgroundColor = textBg;
+    confirmpwdTextField.backgroundColor = textBg;
+  // [buttonChange setTitleColor:buttonBg forState:UIControlStateNormal];
+
+    
+    
+    [self.scroller setBackgroundColor:[UIColor clearColor]];
+    [self.scroller setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg320x480.png"]]];
+    
+    
     keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0,320,50)];
-    
-    //keyboardToolbar.tintColor=[UIColor blackColor];
-    
-    
-    
     keyboardToolbar.tintColor = [UIColor colorWithRed:0.15 green:0.35 blue:0.45 alpha:0.6];
     // keyboardToolbar.translucent = UIBarStyleBlackTranslucent;
     previousButton = [[UIBarButtonItem alloc] initWithTitle:@"previous"
@@ -64,13 +77,12 @@ UIBarButtonItem *done;
     
     [keyboardToolbar setItems:[[NSArray alloc] initWithObjects:previousButton,nextButton,extraSpace, done, nil]];
     [keyboardToolbar sizeToFit];
-    useridTxtField.inputAccessoryView = keyboardToolbar;
     usernameTxtField.inputAccessoryView  = keyboardToolbar;
     emailidTxtField.inputAccessoryView = keyboardToolbar;
     phonenumTxtField.inputAccessoryView = keyboardToolbar;
     passwordTxtField.inputAccessoryView = keyboardToolbar;
     confirmpwdTextField.inputAccessoryView = keyboardToolbar;
-     [emailidTxtField addTarget:self action:@selector(txtfieldDidChange) forControlEvents:UIControlEventEditingChanged];
+    // [emailidTxtField addTarget:self action:@selector(txtfieldDidChange) forControlEvents:UIControlEventEditingChanged];
     
     userImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectCamera)];
@@ -78,9 +90,9 @@ UIBarButtonItem *done;
     isToRegiser = NO;
 
 }
--(void) txtfieldDidChange
+-(void)txtfieldDidChange
 {
-    [buttonChange setTitle:@"Check Availability" forState:UIControlStateNormal];
+  //  [buttonChange setTitle:@"Check Availability" forState:UIControlStateNormal];
     isToRegiser = NO;
 }
 - (void)viewDidLayoutSubviews {
@@ -97,7 +109,6 @@ UIBarButtonItem *done;
     pt.x = 0;
     pt.y -= 20;
     [scroller setContentOffset:pt animated:YES];
-    
 }
 -(void)selectCamera
 {
@@ -147,14 +158,10 @@ UIBarButtonItem *done;
 
 -(void) previousField
 {
-    if ([usernameTxtField isFirstResponder]) {
-        [useridTxtField becomeFirstResponder];
+    if ([emailidTxtField isFirstResponder]) {
+        [usernameTxtField becomeFirstResponder];
         
     }
-    else if ([emailidTxtField isFirstResponder]) {
-        [usernameTxtField becomeFirstResponder];
-    }
-    
     else if ([phonenumTxtField isFirstResponder]) {
         [emailidTxtField becomeFirstResponder];
     }
@@ -169,16 +176,13 @@ UIBarButtonItem *done;
 
 -(void)nextFieldJson
 {
-    if ([useridTxtField isFirstResponder]) {
-        [usernameTxtField becomeFirstResponder];
-    }
-    else if ([usernameTxtField isFirstResponder]) {
+    if ([usernameTxtField isFirstResponder]) {
         [emailidTxtField becomeFirstResponder];
     }
-    
     else if ([emailidTxtField isFirstResponder]) {
         [phonenumTxtField becomeFirstResponder];
     }
+    
     else if ([phonenumTxtField isFirstResponder]) {
         [passwordTxtField becomeFirstResponder];
     }
@@ -217,59 +221,58 @@ UIBarButtonItem *done;
 - (IBAction)chkAvailability:(id)sender {
     NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
-    
-    if (useridTxtField.text.length>0 &&usernameTxtField.text.length>0 && emailidTxtField.text.length>0 &&phonenumTxtField.text.length>0&& passwordTxtField.text.length>0 &&confirmpwdTextField.text.length>0 &&([passwordTxtField.text isEqualToString:confirmpwdTextField.text]) && passwordTxtField.text.length>5 && passwordTxtField.text.length < 20)
+    if (usernameTxtField.text.length>0 && emailidTxtField.text.length>0 &&phonenumTxtField.text.length>0&& passwordTxtField.text.length>0 &&confirmpwdTextField.text.length>0)
         
     {
-        //  if ([[emailidTextField.text componentsSeparatedByString:@"@"] count] > 1) {
-        if ([emailTest evaluateWithObject:emailidTxtField.text] == YES){
-          [kCommon showLoader:self withText:@"Loading..."];
-            if(isToRegiser)
-            {
-                [self registerNow];
-            }else
-            {
-                PFQuery *query = [PFQuery queryWithClassName:@"user_details"];
-                
-                [query whereKey:@"emailid" equalTo:emailidTxtField.text];
-                [query getFirstObjectInBackgroundWithBlock:^(PFObject *gameScore, NSError *error) {
-                    
-                    [kCommon hideLoader];
-                    if(!gameScore)
-                    {
-                        [buttonChange setTitle:@"Signup" forState:UIControlStateNormal];
-                        
-                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Available!!" message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                        [alert show];
-                        isToRegiser = YES;
-                    }else{
-                        
-                        //[query whereKey:@"Image" equalTo:self.image.image];
-                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Email already registered!!" message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                        [alert show];
-                    }
-                }];
+        if (([passwordTxtField.text isEqualToString:confirmpwdTextField.text]) && passwordTxtField.text.length>5 && passwordTxtField.text.length < 20) {
+            //  if ([[emailidTextField.text componentsSeparatedByString:@"@"] count] > 1) {
+            if ([emailTest evaluateWithObject:emailidTxtField.text] == YES){
+                [kCommon showLoader:self withText:@"Loading..."];
+                if(isToRegiser)
+                {
+                    [self registerNow];
+                }else
+                {
+                    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"emailid == %@ OR username == %@",emailidTxtField.text,usernameTxtField.text];
+                    PFQuery *query = [PFQuery queryWithClassName:@"user_details" predicate:predicate];
+                    [query getFirstObjectInBackgroundWithBlock:^(PFObject *gameScore, NSError *error) {
+                        [kCommon hideLoader];
+                        if(!gameScore)
+                        {
+                            [self registerNow];
+                        }
+                        else{
+                            NSString *username = [gameScore objectForKey:@"username"];
+                            if ([username isEqualToString:usernameTxtField.text]) {
+                                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Username already registered!!" message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                                [alert show];
+                            }
+                            else
+                            {
+                                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Email already registered!!" message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                                [alert show];
+                            }
+                        }
+                    }];
+                }
             }
-        }
-        else
+
+        }else
         {
-            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Enter Proper EmailID " message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Password not match" message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [alert show];
         }
-    }
+            }
     else
     {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Password not match" message:@"Password should be 6 to 20 character length" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Enter all Fields!!!" message:nil delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }
 }
 -(void)registerNow
 {
     BOOL success = YES;
-    
     PFQuery *query = [PFQuery queryWithClassName:@"user_details"];
-  //  [query orderByDescending:@"userid"];
-  //  query.limit = 1;  //Limiting One Result Max Value from Descending Order
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *gameScore, NSError *error) {
         [kCommon hideLoader];
         if(!gameScore)
@@ -290,7 +293,6 @@ UIBarButtonItem *done;
          //  NSString *userid = [NSString stringWithFormat:@"%d",setphonenum];
             
            // [obj setObject:[NSNumber numberWithInt:[userid intValue]] forKey:@"User_id"];
-            [obj setObject:useridTxtField.text forKey:@"userid"];
             [obj setObject:usernameTxtField.text forKey:@"username"];
             [obj setObject:emailidTxtField.text forKey:@"emailid"];
             [obj setObject:phonenumTxtField.text forKey:@"phoneno"];

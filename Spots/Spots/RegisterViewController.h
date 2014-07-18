@@ -15,7 +15,6 @@
 @property (strong,nonatomic) UIImagePickerController *imagePicker;
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;
 @property (strong, nonatomic) IBOutlet UIImageView *userImg;
-@property (strong, nonatomic) IBOutlet UITextField *useridTxtField;
 @property (strong, nonatomic) IBOutlet UITextField *usernameTxtField;
 @property (strong, nonatomic) IBOutlet UITextField *emailidTxtField;
 @property (strong, nonatomic) IBOutlet UITextField *phonenumTxtField;
